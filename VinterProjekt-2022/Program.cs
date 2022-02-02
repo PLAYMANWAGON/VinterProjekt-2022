@@ -1,14 +1,12 @@
-﻿Console.WriteLine("Hello, World!");
+﻿Player player = new Player();
 
-Fighter f1 = new Fighter();
+player.Name(Console.ReadLine());
 
-f1.FighterName(Console.ReadLine());
+Console.WriteLine($"Nice name, {player.getName()}!");
 
-Console.WriteLine($"The name is {f1.getName()}");
+player.powerCalc(player.getName().Length);
 
-f1.powerCalc(f1.getName().Length);
-
-Console.WriteLine(f1.getPower());
+Console.WriteLine($"Our magicians back in Brampton have been\nhard at work and determined that you\nhave a power lever of {player.getPower()} points!");
 
 Console.ReadLine();
 

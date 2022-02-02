@@ -1,16 +1,9 @@
 public class Fighter
 {
-    private string name = "";
-    private int powerPoint;
+    protected string name = "";
+    protected int powerPoint;
     private int healthPoint = 100;
     private Random random = new Random();
-
-    public string FighterName(string n)
-    {
-        name = n;
-        return n;
-
-    }
 
     public int powerCalc(int l)
     {
