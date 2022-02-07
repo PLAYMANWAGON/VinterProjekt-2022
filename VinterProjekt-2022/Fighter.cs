@@ -5,7 +5,7 @@ public class Fighter
     private int healthPoint = 100;
     private Random random = new Random();
 
-    public int powerCalc(int l)
+    public int PowerCalc(int l)
     {
         l = l * random.Next(1, 4);
 
