@@ -6,7 +6,7 @@ public class Player : Fighter
         int x;
         while (Int32.TryParse(n, out x))
         {
-            Console.WriteLine("Enter a NAME, not a number...");
+            Console.WriteLine("Enter a NAME, not a number...\n");
 
             n = Console.ReadLine();
         }

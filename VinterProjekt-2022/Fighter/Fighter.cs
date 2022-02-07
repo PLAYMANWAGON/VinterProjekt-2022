@@ -1,7 +1,7 @@
 public class Fighter
 {
     protected string name = "";
-    protected int powerPoint;
+    protected int hitPoint;
     private int healthPoint = 100;
     private Random random = new Random();
 
@@ -9,7 +9,7 @@ public class Fighter
     {
         l = l * random.Next(1, 4);
 
-        powerPoint = l;
+        hitPoint = l;
 
         return l;
 
@@ -19,7 +19,7 @@ public class Fighter
     public int getPower()
     {
 
-        return powerPoint;
+        return hitPoint;
     }
 
     public string getName()

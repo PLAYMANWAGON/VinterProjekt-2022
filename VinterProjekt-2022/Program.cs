@@ -1,15 +1,42 @@
-﻿Player player = new Player();
+﻿using System.Xml;
+using System.Runtime.CompilerServices;
+Player player = new Player();
 
-Console.WriteLine("Hello person, please enter a name for your FIGHTER!!!");
+bool isReady = false;
 
-player.Name(Console.ReadLine());
+while (isReady == false)
+{
+
+    Console.WriteLine("Hello person, please enter a name for your FIGHTER!!!");
+
+    player.Name(Console.ReadLine());
+
+    Console.WriteLine($"Nice name, {player.getName()}!\n");
+
+    player.PowerCalc(player.getName().Length);
+
+    Console.WriteLine($"Our magicians back in Brampton have been hard at work and\nhave determined that you have a power lever of {player.getPower()} points!\n\nYou ready to go? (y/n)\n");
+
+    string input = Console.ReadLine();
 
 
-Console.WriteLine($"Nice name, {player.getName()}!");
+    if (input.ToLower() == "y" || input.ToLower() == "yes")
+    {
+        isReady = true;
+    }
 
-player.PowerCalc(player.getName().Length);
+    else if (input.ToLower() == "n" || input.ToLower() == "no")
+    {
+        isReady = false;
+    }
+    else
+    {
+        Console.WriteLine("You'z trynna be funny? Start over...");
+    }
 
-Console.WriteLine($"Our magicians back in Brampton have been\nhard at work and determined that you\nhave a power lever of {player.getPower()} points!");
+}
+
+Console.WriteLine("\nOKAY LETS GO21");
 
 Console.ReadLine();
 
