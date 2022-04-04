@@ -3,7 +3,7 @@ public class Fighter
     protected string name = "";
     protected int hitPoint;
     private int healthPoint = 100;
-    private Random random = new Random();
+    protected Random random = new Random();
 
     public int PowerCalc(int l)
     {

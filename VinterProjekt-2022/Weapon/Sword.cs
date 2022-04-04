@@ -1,5 +1,8 @@
 public class Sword : Weapon
 {
-    // damage = 2;
+    public Sword()
+    {
+        damage = 2;
+    }
 
 }

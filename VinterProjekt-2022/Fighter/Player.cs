@@ -16,5 +16,13 @@ public class Player : Fighter
 
     }
 
+    public int Coins(int n)
+    {
+        int coins = random.Next(95, 101);
+        coins = n;
+        return n;
+
+    }
+
 
 }
