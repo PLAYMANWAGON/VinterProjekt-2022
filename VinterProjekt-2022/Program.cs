@@ -87,15 +87,15 @@ while (isReady == false)
 
 isEmpty = true;
 
-string a = Console.ReadLine().ToLower();
+
 
 while (isEmpty == true)
 {
     Console.WriteLine("Here's what you can do:\n1. Fight    2. Shop     3. Retire");
 
-    string value = Console.ReadLine();
+    string a = Console.ReadLine().ToLower();
 
-    if (String.IsNullOrEmpty(value))
+    if (String.IsNullOrEmpty(a))
     {
         Console.WriteLine(error.GetError("002"));
         Console.ReadLine();
@@ -119,6 +119,7 @@ while (isEmpty == true)
     {
         Console.WriteLine(error.GetError("003"));
         Thread.Sleep(3000);
+        Environment.Exit(0);
     }
 }
 
