@@ -4,6 +4,7 @@ using System.Xml;
 using System.Runtime.CompilerServices;
 Player player = new Player();
 ErrorCode error = new ErrorCode();
+Shop shop = new Shop();
 
 bool isReady = false;
 
@@ -109,6 +110,8 @@ while (isEmpty == true)
     else if (a == "shop" || a == "2")
     {
 
+        shop.EnterShop();
+
     }
 
     else if (a == "retire" || a == "3")
@@ -117,6 +120,8 @@ while (isEmpty == true)
     }
     else
     {
+        // Här kan jag egentligen bara ha en vanlig error code men ville bara testa 
+        // ett nytt sätt att stänga ner grejen. 
         Console.WriteLine(error.GetError("003"));
         Thread.Sleep(3000);
         Environment.Exit(0);

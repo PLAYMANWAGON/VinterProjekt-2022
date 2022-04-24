@@ -1,10 +1,15 @@
+using System.Threading;
+using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using System;
-
-namespace VinterProjekt_2022
+public class Shop
 {
-    public class Shop
+
+
+
+    public void EnterShop()
     {
+
         Random random = new Random();
 
         List<string> shopFood = new List<string>() { "Bread", "Cheesewheel", "Cabbage", "Sweetroll", "Cabbage Stew" };
@@ -14,5 +19,44 @@ namespace VinterProjekt_2022
         List<string> shopWeapon = new List<string>() { "Little Sword", "Glass Sword", "Cherry Mace", "Devil's Dagger" };
 
 
+
+        Console.WriteLine("Here's what's for sale today:\n\nFood:");
+
+        foreach (string i in shopFood)
+        {
+            Console.Write(i + ", ");
+
+        }
+        Console.WriteLine("\n\nPotions:");
+        foreach (string i in shopPotion)
+        {
+            Console.Write(i + ", ");
+
+        }
+        Console.WriteLine("\n\nFoodstuffs:");
+        foreach (string i in shopFood)
+        {
+            Console.Write(i + ", ");
+
+        }
+
+        Thread.Sleep(1000);
+
+        Console.WriteLine("\n\nAnything on your mind? Type in the name of it!");
+
+        string userInput = Console.ReadLine();
+
+        foreach (string i in shopFood)
+        {
+            if (i.Contains(userInput))
+            {
+                return i;
+            }
+        }
+
+
+        Console.ReadLine();
+
     }
+
 }
