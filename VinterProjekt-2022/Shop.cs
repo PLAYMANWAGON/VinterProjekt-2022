@@ -45,18 +45,12 @@ public class Shop
         Console.WriteLine("\n\nAnything on your mind? Type in the name of it!");
 
         string userInput = Console.ReadLine();
-
-        foreach (string i in shopFood)
+        if (shopFood.Contains(userInput) || shopPotion.Contains(userInput) || shopWeapon.Contains(userInput))
         {
-            if (i.Contains(userInput))
-            {
-                return i;
-            }
+            Console.WriteLine("Would you like to buy '" + userInput + "'?\nPrice: " + userInput.Length);
+
+
         }
-
-
-        Console.ReadLine();
-
     }
 
 }
