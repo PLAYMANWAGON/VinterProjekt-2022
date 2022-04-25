@@ -24,5 +24,12 @@ public class Player : Fighter
 
     }
 
+    public void AddToInventory(string item)
+    {
+        List<string> inventory = new List<string>();
+
+        this.item = item;
+    }
+
 
 }
