@@ -16,16 +16,25 @@ public class Fighter
 
     }
 
-    public int getPower()
+    public int GetPower()
     {
 
         return hitPoint;
     }
 
-    public string getName()
+    public string GetName()
     {
         return name;
     }
+
+    public string SetName(string n)
+    {
+        n = name;
+
+        return n;
+
+    }
+
 
 
 }

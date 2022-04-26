@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 Player player = new Player();
 ErrorCode error = new ErrorCode();
 Shop shop = new Shop();
+Arena arena = new Arena();
 
 bool isReady = false;
 
@@ -38,16 +39,16 @@ while (isReady == false)
 
 
 
-    Console.WriteLine($"Nice name, {player.getName()}!\n");
+    Console.WriteLine($"Nice name, {player.GetName()}!\n");
 
-    player.PowerCalc(player.getName().Length);
+    player.PowerCalc(player.GetName().Length);
 
     string input;
 
     while (isEmpty == true)
     {
 
-        Console.WriteLine($"Our magicians back in Brampton have been hard at work and\nhave determined that you have a power lever of {player.getPower()} points!\n\nYou ready to go? (y/n)\n");
+        Console.WriteLine($"Our magicians back in Brampton have been hard at work and\nhave determined that you have a power lever of {player.GetPower()} points!\n\nYou ready to go? (y/n)\n");
 
         input = Console.ReadLine();
         if (String.IsNullOrEmpty(input))
@@ -104,7 +105,7 @@ while (isEmpty == true)
 
     else if (a == "fight" || a == "1")
     {
-        // LÄGG TILL SKIT HÄR SOM LEDER SPELAREN TILL "ARENAN"
+        arena.EnterArena();
     }
 
     else if (a == "shop" || a == "2")
