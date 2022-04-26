@@ -27,7 +27,7 @@ public class Shop
 
         shopWeapon = shopWeapon.ConvertAll(item => item.ToLower());
 
-        while (inShop = true)
+        while (inShop == true)
         {
 
             Console.WriteLine("Here's what's for sale today:\n\nFood:");
@@ -76,11 +76,6 @@ public class Shop
                     // Retorisk kod som tar bort pengar från spelaren om han har råd. Orkar skriva den.
 
                     player.AddToInventory(userInput);
-
-                    Console.WriteLine(player.AddToInventory.inventory[0]);
-
-                    Console.ReadLine();
-
 
                     Thread.Sleep(500);
 

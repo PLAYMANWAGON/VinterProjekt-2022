@@ -1,6 +1,8 @@
 public class Player : Fighter
 {
 
+    public static List<string> inventory = new List<string>();
+
     public string Name(string n)
     {
         int x;
@@ -26,9 +28,7 @@ public class Player : Fighter
 
     public void AddToInventory(string item)
     {
-        List<string> inventory = new List<string>();
-
-        this.item = item;
+        inventory.Add(item);
     }
 
 
