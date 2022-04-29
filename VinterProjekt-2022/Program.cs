@@ -15,6 +15,12 @@ bool isEmpty = true;
 while (isReady == false)
 {
 
+
+    // Denna while gör att om input är tom så får man inte fortsätta förrän man 
+    // har skrivit något vilket i det här fallet är namnet. 
+    // Om spelaren vore inte skriva något aktiveras error.GetError vilket
+    // innehåller olika errorcodes.
+
     while (isEmpty == true)
     {
         Console.WriteLine("Hello person, please enter a name for your FIGHTER!!!");
@@ -105,7 +111,7 @@ while (isEmpty == true)
 
     else if (a == "fight" || a == "1")
     {
-        arena.EnterArena();
+        arena.EnterArena(player);
     }
 
     else if (a == "shop" || a == "2")

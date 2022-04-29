@@ -30,7 +30,7 @@ public class Shop
         while (inShop == true)
         {
 
-            Console.WriteLine("Here's what's for sale today:\n\nFood:");
+            Console.WriteLine("Here's what's for sale today:\n\nFoodstuffs:");
 
             Thread.Sleep(500);
 
@@ -51,8 +51,8 @@ public class Shop
 
             Thread.Sleep(500);
 
-            Console.WriteLine("\n\nFoodstuffs:");
-            foreach (string i in shopFood)
+            Console.WriteLine("\n\nWeapons:");
+            foreach (string i in shopWeapon)
             {
                 Console.Write(i + ", ");
 
@@ -65,7 +65,7 @@ public class Shop
             string userInput = Console.ReadLine();
             if (shopFood.Contains(userInput) || shopPotion.Contains(userInput) || shopWeapon.Contains(userInput))
             {
-                Console.WriteLine("Would you like to buy '" + userInput + "'?\nPrice: " + userInput.Length + "\n\n(jag orkar inte göra en coin system så allt är gratis)\n\n");
+                Console.WriteLine("Would you like to buy '" + userInput + "'?\nPrice: " + userInput.Length + " (y/n)\n\n(jag orkar inte göra en coin system så allt är gratis)\n\n");
 
                 string isBuying = Console.ReadLine();
 

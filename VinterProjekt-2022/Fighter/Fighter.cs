@@ -1,9 +1,11 @@
 public class Fighter
 {
     protected string name = "";
-    protected int hitPoint;
+    protected int hitPoint = 20;
     private int healthPoint = 100;
     protected Random random = new Random();
+
+    public bool isDead = false;
 
     public int PowerCalc(int l)
     {
@@ -14,6 +16,11 @@ public class Fighter
         return l;
 
 
+    }
+
+    public int GetHealth()
+    {
+        return healthPoint;
     }
 
     public int GetPower()
@@ -27,12 +34,17 @@ public class Fighter
         return name;
     }
 
-    public string SetName(string n)
+    public void SetName(string n)
     {
-        n = name;
+        name = n;
 
-        return n;
+    }
 
+    public int TakeDamage(int damage)
+    {
+        healthPoint -= damage;
+
+        return damage;
     }
 
 

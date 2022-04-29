@@ -4,18 +4,21 @@ public class Enemy : Fighter
     private float strikeChance = 1;
 
     private int damageMultiplier;
-    Random generator = new Random(); //generatorn som ärvs från fighter vill inte funka så detta är min dumma lösning
 
     public static List<string> nameList = new List<string>() { "Dabe", "Choblan", "Soupman", "Jonas", "Que Pro", "Dumpas", "EmojiMan", "Widell", "Subscrib" };
 
-    public void EnemyNameGenerator()
+    // Denna kodblock körs direkt när den här objektet skapas i Arenan
+    // I princip, den tar längden på listan ovan och skapar en maxtal
+    // till SetName om listan vore minskas eller förstoras i antal strings.
+
+    public Enemy()
     {
 
         int nameMax = nameList.Count - 1;
 
-        int nameNumber = generator.Next(0, nameMax);
+        int nameNumber = random.Next(0, nameMax);
 
-        Enemy.SetName(nameList[nameNumber]);
+        SetName(nameList[nameNumber]);
 
     }
 
