@@ -1,9 +1,12 @@
+
 using System;
 public class Enemy : Fighter
 {
     private float strikeChance = 1;
 
     private int damageMultiplier;
+
+    // skapar ett lista med namn samt lägger in ett par i den. 
 
     public static List<string> nameList = new List<string>() { "Dabe", "Choblan", "Soupman", "Jonas", "Que Pro", "Dumpas", "EmojiMan", "Widell", "Subscrib" };
 

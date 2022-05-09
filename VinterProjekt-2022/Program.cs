@@ -51,6 +51,9 @@ while (isReady == false)
 
     string input;
 
+    // Denna kod bekräftar om spelaren vill fortsätta med sitt namn/powerpoint
+    // eller börja om för att byta namn eller fuska sig fram mer powerpoints
+
     while (isEmpty == true)
     {
 
@@ -95,7 +98,10 @@ while (isReady == false)
 
 isEmpty = true;
 
-
+// Koden här nere skapar ett meny där spelaren får välja mellan tre olika scener
+// Man tar sig till två av tre (tredje är en quit program funktion) scener genom
+// ett simpellt kod som kallar till ett metod i en klass. Där körs resten av det
+// kod som har något sammanhängande med klassen.
 
 while (isEmpty == true)
 {

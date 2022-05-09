@@ -15,6 +15,8 @@ public class Shop
 
         bool inShop = true;
 
+        /* skapar tre olika listor så att man kan lättare kategorisera vad listan innehåller */
+
         List<string> shopFood = new List<string>() { "Bread", "Cheesewheel", "Cabbage", "Sweetroll", "Cabbage Stew" };
 
         shopFood = shopFood.ConvertAll(item => item.ToLower());
@@ -27,12 +29,16 @@ public class Shop
 
         shopWeapon = shopWeapon.ConvertAll(item => item.ToLower());
 
+        /* Denna while loop ser till att spelaren stannar kvar i affären efter den har interaggerat med något */
+
         while (inShop == true)
         {
 
             Console.WriteLine("Here's what's for sale today:\n\nFoodstuffs:");
 
             Thread.Sleep(500);
+
+            // denna foreach används för att skriva ner varenda string från den listan som stringen befinner sig i
 
             foreach (string i in shopFood)
             {
@@ -62,6 +68,8 @@ public class Shop
 
             Console.WriteLine("\n\nAnything on your mind? Type in the name of it! Type exit to exit.");
 
+            //  denna kod här är ett relativt dum, men effektiv sätt att kolla igenom varje lista för det string som man söker.
+
             string userInput = Console.ReadLine();
             if (shopFood.Contains(userInput) || shopPotion.Contains(userInput) || shopWeapon.Contains(userInput))
             {
@@ -71,7 +79,7 @@ public class Shop
 
                 if (isBuying == "yes")
                 {
-                    // shopFood.RemoveAll(item => item.name == userInput);
+                    // shopFood.RemoveAll(item => item.name == userInput); Detta var mitt initiella sätt att ta bort det man skriver ur varenda lista som existerar, men det funkade inte. Har den kvar för att visa mig själv hur jag skulle kunna göra ett liknande kod utan Linq
 
                     // Retorisk kod som tar bort pengar från spelaren om han har råd. Orkar skriva den.
 
@@ -79,11 +87,12 @@ public class Shop
 
                     Thread.Sleep(500);
 
-                    Console.WriteLine("Grat doing business with you! " + userInput + " has been added to your inventory.");
+                    Console.WriteLine("Great doing business with you! " + userInput + " has been added to your inventory.");
 
                     Console.ReadLine();
                 }
             }
+
             else
             {
                 Console.WriteLine("Sorry bub, I don't sell this " + userInput + " you speak of...");

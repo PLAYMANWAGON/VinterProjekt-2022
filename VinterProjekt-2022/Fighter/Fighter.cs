@@ -7,6 +7,10 @@ public class Fighter
 
     public bool isDead = false;
 
+    /* enkel kod som dumt beräknar spelarens hitpoints genom att 
+    ta längden av spelarens namn och gångra det med ett slumpat tal
+    mellan 1 och 4. */
+
     public int PowerCalc(int l)
     {
         l = l * random.Next(1, 4);
@@ -17,6 +21,11 @@ public class Fighter
 
 
     }
+
+
+    /* basically allt här under är en hel del olika get metoder
+    för att hämta in värdet från olika variabler */
+
 
     public int GetHealth()
     {
@@ -39,6 +48,10 @@ public class Fighter
         name = n;
 
     }
+
+    // ett metod som tar in ett variabel, damage, och sedan sänker healthpoint
+    // med antal damage. Detta funkar i två led genom att det funkar både
+    // både spelaren och fienden. 
 
     public int TakeDamage(int damage)
     {
