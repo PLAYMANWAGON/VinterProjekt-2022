@@ -133,6 +133,9 @@ while (isEmpty == true)
     }
     else
     {
+        // I denna else är det egentligen smartare att ha andra errorcodes istället för att ha en "något okänt hände, nu stängs allt ner". 
+        // Egentligen ville jag bara ha den för att testa den samt visa att jag kan använda mig av alla instanser av strings. 
+
         // Här kan jag egentligen bara ha en vanlig error code men ville bara testa 
         // ett nytt sätt att stänga ner grejen. 
         Console.WriteLine(error.GetError("003"));

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
@@ -8,12 +9,13 @@ public class Shop
 
     public void EnterShop()
     {
-
         Player player = new Player();
-
         Random random = new Random();
+        ErrorCode error = new ErrorCode();
 
         bool inShop = true;
+
+        bool inTransaction = true;
 
         /* skapar tre olika listor så att man kan lättare kategorisera vad listan innehåller */
 
@@ -71,25 +73,54 @@ public class Shop
             //  denna kod här är ett relativt dum, men effektiv sätt att kolla igenom varje lista för det string som man söker.
 
             string userInput = Console.ReadLine();
+
             if (shopFood.Contains(userInput) || shopPotion.Contains(userInput) || shopWeapon.Contains(userInput))
             {
-                Console.WriteLine("Would you like to buy '" + userInput + "'?\nPrice: " + userInput.Length + " (y/n)\n\n(jag orkar inte göra en coin system så allt är gratis)\n\n");
 
-                string isBuying = Console.ReadLine();
+                // denna while loop används för att se till att om spelaren skriver in något fel så avbryts inte handeln
+                // utan bara får veta att den skrev fel och får fortsätta köpa bröd eller något.
 
-                if (isBuying == "yes")
+                while (inTransaction == true)
                 {
-                    // shopFood.RemoveAll(item => item.name == userInput); Detta var mitt initiella sätt att ta bort det man skriver ur varenda lista som existerar, men det funkade inte. Har den kvar för att visa mig själv hur jag skulle kunna göra ett liknande kod utan Linq
 
-                    // Retorisk kod som tar bort pengar från spelaren om han har råd. Orkar skriva den.
+                    Console.WriteLine("Would you like to buy '" + userInput + "'?\nPrice: " + userInput.Length + " (y/n)\n\n(jag orkar inte göra en coin system så allt är gratis)\n\n");
 
-                    player.AddToInventory(userInput);
+                    string isBuying = Console.ReadLine();
 
-                    Thread.Sleep(500);
 
-                    Console.WriteLine("Great doing business with you! " + userInput + " has been added to your inventory.");
 
-                    Console.ReadLine();
+
+
+                    if (isBuying == "yes" || isBuying == "y")
+                    {
+                        // shopFood.RemoveAll(item => item.name == userInput); Detta var mitt initiella sätt att ta bort det man skriver ur varenda lista som existerar, men det funkade inte. Har den kvar för att visa mig själv hur jag skulle kunna göra ett liknande kod utan Linq
+
+                        // Retorisk kod som tar bort pengar från spelaren om han har råd. Orkar skriva den.
+
+                        player.AddToInventory(userInput);
+
+                        Thread.Sleep(500);
+
+                        Console.WriteLine("Great doing business with you! " + userInput + " has been added to your inventory.");
+
+                        inTransaction = false;
+
+                        Console.ReadLine();
+                    }
+                    else if (isBuying == "no" || isBuying == "n")
+                    {
+
+                        Console.WriteLine("Alright then. Anything else on this list might interest you?");
+                        inTransaction = false;
+                        Console.ReadLine();
+
+                    }
+                    else
+                    {
+                        Console.WriteLine(error.GetError("001"));
+                        Console.ReadLine();
+
+                    }
                 }
             }
 
