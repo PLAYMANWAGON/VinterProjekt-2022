@@ -6,7 +6,6 @@ public class Main
     public void Menu()
     {
 
-
         Player player = new Player();
         ErrorCode error = new ErrorCode();
         Shop shop = new Shop();
@@ -16,7 +15,7 @@ public class Main
 
         while (isEmpty == true)
         {
-            Console.WriteLine("Here's what you can do:\n1. Fight    2. Shop     3. Retire");
+            Console.WriteLine("Here's what you can do:\n1. Fight    2. Shop     3. Check Inventory  4. Retire");
 
             string a = Console.ReadLine().ToLower();
 
@@ -38,10 +37,17 @@ public class Main
 
             }
 
-            else if (a == "retire" || a == "3")
+            else if (a == "inventory" || a == "3")
+            {
+                player.GetInventory();
+            }
+
+            else if (a == "retire" || a == "4")
             {
                 Environment.Exit(0);
             }
+
+
             else
             {
                 // I denna else är det egentligen smartare att ha andra errorcodes istället för att ha en "något okänt hände, nu stängs allt ner". 

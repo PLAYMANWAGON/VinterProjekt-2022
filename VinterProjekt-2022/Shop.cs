@@ -69,6 +69,8 @@ public class Shop
 
             Console.WriteLine("\n\nAnything on your mind? Type in the name of it! Type exit to exit.");
 
+            Console.WriteLine("\nYour coins " + player.GetCoin());
+
             //  denna kod här är ett relativt dum, men effektiv sätt att kolla igenom varje lista för det string som man söker.
 
             string userInput = Console.ReadLine();

@@ -1,6 +1,6 @@
 public class ErrorCode
 {
-    Dictionary<string, string> errors = new Dictionary<string, string>();
+    private Dictionary<string, string> errors = new Dictionary<string, string>();
 
     // Här får programmeraren en enkelt sätt att enklare debugga om något illa
     // skulle hända. För tillfället finns det ett fåtal errorcodes, men om jag

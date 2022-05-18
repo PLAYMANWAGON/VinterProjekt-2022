@@ -4,6 +4,7 @@ public class Fighter
     protected int hitPoint = 20;
     private int healthPoint = 100;
     protected Random random = new Random();
+    protected int coin = 50;
 
     public bool isDead = false;
 

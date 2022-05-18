@@ -1,7 +1,7 @@
 public class Player : Fighter
 {
 
-    public static List<string> inventory = new List<string>();
+    private static List<string> inventory = new List<string>() { "TestItem", "TestItem2", "TestItem3" };
 
 
     /* kod som ser till att spelarens namn har minst ett bokstav för att kunna
@@ -24,12 +24,17 @@ public class Player : Fighter
 
     /* simpel kod som slumpar ett antal kronor som spelaren får ha. */
 
-    public int Coins(int n)
+    public int CoinGenerator(int n)
     {
-        int coins = random.Next(95, 101);
-        coins = n;
+        coin = random.Next(95, 101);
+        coin = n;
         return n;
 
+    }
+
+    public int GetCoin()
+    {
+        return coin;
     }
 
     /* ett enkelt metod som används främst inom shoppen där ett ord (vilket i slutändan skulle ha ett
@@ -38,6 +43,20 @@ public class Player : Fighter
     public void AddToInventory(string item)
     {
         inventory.Add(item);
+    }
+
+    public void GetInventory()
+    {
+        Console.WriteLine("Here's what's in your backpack:\n");
+
+        foreach (var item in inventory)
+        {
+            Console.WriteLine(item + ",");
+
+        }
+
+        Console.WriteLine();
+
     }
 
 
