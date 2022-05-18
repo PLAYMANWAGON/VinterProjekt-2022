@@ -7,9 +7,8 @@ using System.Linq;
 public class Shop
 {
 
-    public void EnterShop()
+    public void EnterShop(Player player)
     {
-        Player player = new Player();
         Random random = new Random();
         ErrorCode error = new ErrorCode();
 
@@ -128,6 +127,11 @@ public class Shop
             {
                 Console.WriteLine("Sorry bub, I don't sell this " + userInput + " you speak of...");
 
+            }
+
+            if (userInput == "exit")
+            {
+                inShop = false;
             }
         }
     }
