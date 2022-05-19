@@ -2,12 +2,16 @@ using System;
 
 public class Arena
 {
+    private bool inArena = false;
+
     public void EnterArena(Player player)
     {
         Enemy enemy = new Enemy();
         ErrorCode error = new ErrorCode();
 
-        bool inArena = true;
+        inArena = true;
+
+
 
         while (inArena == true)
         {
@@ -25,7 +29,7 @@ public class Arena
                 // Simpel kod där medans spelaren och fienden är vid liv så körs fighten
                 // om oh om igen tills någon dör.
 
-                while (!player.isDead && !enemy.isDead)
+                while (!player.GetIsDead() && !enemy.GetIsDead())
                 {
                     Console.WriteLine("Press enter to partake in the battle.");
                     enemy.TakeDamage(player.GetPower());
@@ -48,7 +52,7 @@ public class Arena
 
                     if (player.GetHealth() <= 0)
                     {
-                        player.isDead = true;
+                        player.SetIsDead(true);
                         Console.WriteLine("You have died! " + enemy.GetName() + " has won the game!\n\n The game will now turn off because you're obviously dead and have no way to\ncome back to life!");
                         Console.ReadLine();
                         Environment.Exit(0);
@@ -56,9 +60,12 @@ public class Arena
 
                     if (enemy.GetHealth() <= 0)
                     {
-                        enemy.isDead = true;
+                        enemy.SetIsDead(true);
+                        inArena = false;
                         Console.WriteLine("You have killed " + enemy.GetName() + "! Congratulations, your spoils of the battle are now\nin your hands...");
                         Console.ReadLine();
+                        Console.Clear();
+
                     }
 
 

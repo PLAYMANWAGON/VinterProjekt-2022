@@ -6,7 +6,19 @@ public class Fighter
     protected Random random = new Random();
     protected int coin = 50;
 
-    public bool isDead = false;
+    private bool isDead = false;
+
+    public bool GetIsDead()
+    {
+        return isDead;
+    }
+
+    public bool SetIsDead(bool b)
+    {
+        isDead = b;
+        return b;
+
+    }
 
     /* enkel kod som dumt beräknar spelarens hitpoints genom att 
     ta längden av spelarens namn och gångra det med ett slumpat tal

@@ -8,7 +8,7 @@ public class Enemy : Fighter
 
     // skapar ett lista med namn samt lägger in ett par i den. 
 
-    private static List<string> nameList = new List<string>() { "Dabe", "Choblan", "Soupman", "Jonas", "Que Pro", "Dumpas", "EmojiMan", "Widell", "Subscrib" };
+    private static List<string> nameList = new List<string>() { "Dabe", "Choblan", "Soupman", "Jonas", "Que Pro", "Dumpas", "EmojiMan", "Widell137", "Subscrib" };
 
     // Denna kodblock körs direkt när den här objektet skapas i Arenan
     // I princip, den tar längden på listan ovan och skapar en maxtal
