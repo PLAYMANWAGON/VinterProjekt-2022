@@ -1,10 +1,13 @@
-
 using System;
-public class Enemy : Fighter
-{
-    private float strikeChance = 1;
 
-    private int damageMultiplier;
+public class Enemy : Player
+{
+    private int accuracy;
+
+    private int chance;
+
+    private int damageMultiplier; //Vill Impletera men orka
+
 
     // skapar ett lista med namn samt lägger in ett par i den. 
 
@@ -22,6 +25,23 @@ public class Enemy : Fighter
         int nameNumber = random.Next(0, nameMax);
 
         SetName(nameList[nameNumber]);
+    }
+
+    public int GetAccuracy()
+    {
+        return accuracy;
+    }
+
+    public int GetChance()
+    {
+        return chance;
+    }
+
+    public void ResetStat()
+    {
+        accuracy = random.Next(0, 99);
+
+        chance = random.Next(0, 99);
 
     }
 

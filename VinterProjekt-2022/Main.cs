@@ -10,12 +10,13 @@ public class Main
         ErrorCode error = new ErrorCode();
         Shop shop = new Shop();
         Arena arena = new Arena();
+        Barracks barracks = new Barracks();
 
         bool isEmpty = true;
 
         while (isEmpty == true)
         {
-            Console.WriteLine("Here's what you can do:\n1. Fight    2. Shop     3. Check Inventory  4. Retire");
+            Console.WriteLine("Here's what you can do:\n1. Go to Arena    2. Shop     3. Check Inventory  4. Retire");
 
             string a = Console.ReadLine().ToLower();
 
@@ -27,7 +28,7 @@ public class Main
 
             else if (a == "fight" || a == "1")
             {
-                arena.EnterArena(player);
+                barracks.EnterBarracks(player);
             }
 
             else if (a == "shop" || a == "2")

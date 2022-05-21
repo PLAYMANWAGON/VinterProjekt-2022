@@ -1,10 +1,12 @@
 public class Fighter
 {
     protected string name = "";
+
     protected int hitPoint = 20;
     private int healthPoint = 100;
-    protected Random random = new Random();
     protected int coin = 50;
+
+    protected Random random = new Random();
 
     private bool isDead = false;
 

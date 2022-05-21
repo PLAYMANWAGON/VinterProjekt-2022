@@ -3,6 +3,8 @@ public class Player : Fighter
 
     private static List<string> inventory = new List<string>() { "TestItem", "TestItem2", "TestItem3" };
 
+    private int winAmount = 0;
+
 
     /* kod som ser till att spelarens namn har minst ett bokstav för att kunna
     kategoriseras som ett namn enligt mig*/
@@ -57,6 +59,16 @@ public class Player : Fighter
 
         Console.WriteLine();
 
+    }
+
+    public void WinAmount()
+    {
+        Console.WriteLine(winAmount);
+    }
+
+    public void SetWinAmount()
+    {
+        winAmount++;
     }
 
 

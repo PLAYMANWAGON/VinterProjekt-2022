@@ -11,6 +11,7 @@ public class ErrorCode
         errors.Add("001", "User input invalid value. (Answer with Y/N)");
         errors.Add("002", "User input is null. (Input cannot be empty)");
         errors.Add("003", "Unknown error occured. Program will shut down within three seconds.");
+        errors.Add("004", "Please enter the specified commands.");
         // ERROR CODE FÖR MAIN MENY OM MAN SKRIVER NÅGOT DUMT
     }
 
