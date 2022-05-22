@@ -13,7 +13,6 @@ public class Startup
 
         bool isReady = false;
 
-
         while (isReady == false)
         {
 
@@ -40,13 +39,9 @@ public class Startup
                     player.Name(value);
                     isEmpty = false;
                 }
-
-
             }
 
             isEmpty = true;
-
-
 
             Console.WriteLine($"Nice name, {player.GetName()}!\n");
 
@@ -59,7 +54,6 @@ public class Startup
 
             while (isEmpty == true)
             {
-
                 Console.WriteLine($"Our magicians back in Brampton have been hard at work and\nhave determined that you have a power lever of {player.GetPower()} points!\n\nYou ready to go? (y/n)\n");
 
                 input = Console.ReadLine();
@@ -72,9 +66,6 @@ public class Startup
                 {
                     isEmpty = false;
                 }
-
-
-
 
                 if (input.ToLower() == "y" || input.ToLower() == "yes")
                 {
@@ -90,7 +81,6 @@ public class Startup
                 }
                 else
                 {
-
                     Console.WriteLine(error.GetError("001"));
                     Console.ReadLine();
                     Console.Clear();
@@ -99,6 +89,6 @@ public class Startup
             }
 
         }
-        main.Menu();
+        main.Menu(player);
     }
 }

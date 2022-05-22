@@ -11,13 +11,11 @@ public class Arena
 
         inArena = true;
 
-
         while (inArena == true)
         {
-
             Console.WriteLine("Press enter to partake in the battle.");
             // Simpel kod där medans spelaren och fienden är vid liv så körs fighten
-            // om oh om igen tills någon dör.
+            // om och om igen tills någon dör.
 
             while (!player.GetIsDead() && !enemy.GetIsDead())
             {
@@ -38,13 +36,13 @@ public class Arena
                     if (enemy.GetAccuracy() >= enemy.GetChance())
                     {
                         player.TakeDamage(enemy.GetPower());
-                        Console.WriteLine("You take " + enemy.GetPower() + " damage from " + enemy.GetName() + " with an accuracy of " + enemy.GetAccuracy());
+                        Console.WriteLine("You take " + enemy.GetPower() + " damage from " + enemy.GetName() + " with an accuracy of " + enemy.GetAccuracy() + "\n----------------------------------------");
                         Console.ReadLine();
 
                     }
                     else
                     {
-                        System.Console.WriteLine("The enemy missed lmao");
+                        System.Console.WriteLine("The enemy missed lmao\n----------------------------------------");
                     }
                 }
 

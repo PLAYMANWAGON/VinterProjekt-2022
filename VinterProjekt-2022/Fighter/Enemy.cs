@@ -6,7 +6,7 @@ public class Enemy : Player
 
     private int chance;
 
-    private int damageMultiplier; //Vill Impletera men orka
+    protected int damageMultiplier;
 
 
     // skapar ett lista med namn samt lägger in ett par i den. 
@@ -25,6 +25,7 @@ public class Enemy : Player
         int nameNumber = random.Next(0, nameMax);
 
         SetName(nameList[nameNumber]);
+
     }
 
     public int GetAccuracy()

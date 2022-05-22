@@ -3,10 +3,8 @@ using System;
 public class Main
 {
 
-    public void Menu()
+    public void Menu(Player player)
     {
-
-        Player player = new Player();
         ErrorCode error = new ErrorCode();
         Shop shop = new Shop();
         Arena arena = new Arena();

@@ -3,7 +3,7 @@ public class Player : Fighter
 
     private static List<string> inventory = new List<string>() { "TestItem", "TestItem2", "TestItem3" };
 
-    private int winAmount = 0;
+    protected int winAmount = 2; // sattit 2 för programmerings skull 
 
 
     /* kod som ser till att spelarens namn har minst ett bokstav för att kunna
